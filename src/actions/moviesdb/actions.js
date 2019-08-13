@@ -1,5 +1,5 @@
 import { FETCH_ALL_MOVIES } from './constants';
-import { getAllMovies } from '../../data/tmbd-request-handler';
+import { getAllMovies } from '../../data/network/tmbd-request-handler';
 
 export const fetchMovies = () => async dispatch => {
   await getAllMovies()

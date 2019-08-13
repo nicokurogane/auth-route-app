@@ -4,6 +4,7 @@ import {
   LOGIN_SUCCESFUL,
   LOGOUT_USER
 } from '../actions/reqres/constants';
+import LocalStorage from '../data/local-storage-handler/LocalStorage';
 
 const initialState = { user: null, isCheckingUser: false };
 
@@ -14,8 +15,10 @@ const loginReducers = (state = initialState, action) => {
     case LOGIN_FAILURE:
       return { ...state, isCheckingUser: false };
     case LOGIN_SUCCESFUL:
-      return { ...state, user: action.payload, isCheckingUser: false };
+      LocalStorage.saveAuthToken(action.payload);
+      return { ...state, isCheckingUser: false };
     case LOGOUT_USER:
+      LocalStorage.cleanAuthToken();
       return { ...state, user: null, isCheckingUser: false };
     default:
       return state;
