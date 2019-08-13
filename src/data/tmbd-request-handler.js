@@ -1,4 +1,4 @@
-import tmdbAxiosInstance from "./tmdb-axios-config";
+import tmdbAxiosInstance from './axios-instance-configs/tmdb-axios-config';
 //import reqresAxiosInstance from "./reqres-axios-config";
 
 export const getAllMovies = async () => {
