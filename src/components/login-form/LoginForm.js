@@ -12,7 +12,7 @@ const ConnectedLoginForm = props => {
       className="form-login"
     >
       <Field
-        name="username"
+        name="email"
         type="text"
         component={renderField}
         label="Username"

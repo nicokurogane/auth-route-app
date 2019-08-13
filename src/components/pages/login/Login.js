@@ -1,13 +1,17 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { checkLoginCredentials } from '../../../actions/reqres/actions';
 import { Link } from 'react-router-dom';
 import LoginFrom from '../../login-form/LoginForm';
 
 import './login.scss';
 import cityImg from '../../../assets/future-city.jpg';
+import dummyLoading from '../../../assets/locked.svg';
 
-class Login extends React.Component {
+class ConnectedLogin extends React.Component {
   handleSubmit = values => {
     console.log(values);
+    this.props.checkLoginCredentials(values);
   };
 
   render() {
@@ -30,6 +34,18 @@ class Login extends React.Component {
                 Sign Up Now
               </Link>
             </div>
+
+            <div>
+              <img
+                src={dummyLoading}
+                style={{
+                  height: '1rem',
+                  margin: '4vh',
+                  display: this.props.isCheckingUser ? 'block' : 'none'
+                }}
+                alt="test"
+              ></img>
+            </div>
           </div>
           <div className="side-img-container panel">
             <img
@@ -47,5 +63,17 @@ class Login extends React.Component {
     );
   }
 }
+
+const mapStateToProps = state => {
+  return {
+    loggedUser: state.login.user,
+    isCheckingUser: state.login.isCheckingUser
+  };
+};
+
+const Login = connect(
+  mapStateToProps,
+  { checkLoginCredentials }
+)(ConnectedLogin);
 
 export default Login;
