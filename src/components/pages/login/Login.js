@@ -1,10 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './login.scss';
+import LoginFrom from '../../login-form/LoginForm';
 
+import './login.scss';
 import cityImg from '../../../assets/future-city.jpg';
 
 class Login extends React.Component {
+  handleSubmit = values => {
+    console.log(values);
+  };
+
   render() {
     return (
       <div className="login-container">
@@ -18,9 +23,7 @@ class Login extends React.Component {
               Log in to get in the moment updates on the things that interest
               you
             </span>
-            <input type="text" placeholder="Username"></input>
-            <input type="text" placeholder="Username"></input>
-            <button>Sign In</button>
+            <LoginFrom onSubmitForm={this.handleSubmit} />
             <div>
               <span>Don't you have an account?</span>
               <Link to="/" className="">
