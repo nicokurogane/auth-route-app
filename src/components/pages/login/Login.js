@@ -1,11 +1,16 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import "./login.scss";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './login.scss';
+
+import cityImg from '../../../assets/future-city.jpg';
 
 class Login extends React.Component {
   render() {
     return (
       <div className="login-container">
+        <span className="big-circle top-circle"></span>
+        <span className="big-circle bottom-circle"></span>
+
         <div className="form-login-container">
           <div className="form-container panel">
             <span>welcome to infinity</span>
@@ -23,7 +28,17 @@ class Login extends React.Component {
               </Link>
             </div>
           </div>
-          <div className="side-img-container panel">img container</div>
+          <div className="side-img-container panel">
+            <img
+              src={cityImg}
+              className="city-background right-border"
+              alt="city"
+            />
+            <div className="about-panel right-border stacking-container" />
+            <div className="about-panel-content stacking-container">
+              infinity
+            </div>
+          </div>
         </div>
       </div>
     );

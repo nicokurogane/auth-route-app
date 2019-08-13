@@ -4,6 +4,7 @@
   },
   "extends": ["react-app", "plugin:prettier/recommended"],
   "rules": {
-    "no-unused-vars": "error"
+    "no-unused-vars": "error",
+    "quotes": [2, "single", { "avoidEscape": true }]
   }
 }
