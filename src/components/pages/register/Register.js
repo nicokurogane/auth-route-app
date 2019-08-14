@@ -1,11 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { registerUser } from '../../../actions/reqres/register/actions';
 import RegisterForm from '../../register-form/RegisterFrom';
+
+import spinnerGif from '../../../assets/spinner.gif';
 import './register.scss';
 
 class ConnectedRegister extends React.Component {
   handleSubmit = values => {
     console.log(values);
+    const { email, password } = values;
+    this.props.registerUser({ email, password });
   };
 
   render() {
@@ -16,14 +21,26 @@ class ConnectedRegister extends React.Component {
 
         <h1>Register page</h1>
         <RegisterForm onSubmitForm={this.handleSubmit} />
+        {this.props.isRegisteringUser ? (
+          <img src={spinnerGif} alt="loading" />
+        ) : (
+          ''
+        )}
       </div>
     );
   }
 }
 
+const mapStateToProps = state => {
+  return {
+    currentUser: state.register.user,
+    isRegisteringUser: state.register.isRegisteringUser
+  };
+};
+
 const Register = connect(
-  null,
-  null
+  mapStateToProps,
+  { registerUser }
 )(ConnectedRegister);
 
 export default Register;

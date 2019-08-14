@@ -2,9 +2,15 @@ import React from 'react';
 import { reduxForm, Field } from 'redux-form';
 import SubmitButton from '../custom-inputs/submit-button/SubmitButton';
 import InputText from '../custom-inputs/InputText';
+import GroupRadioButtons from '../custom-inputs/group-radio-button/GroupRadioButtons';
 import StringValidator from '../../utilities/StringValidator';
 
 const ConnectedRegisterFrom = props => {
+  const genres = [
+    { value: 'male', text: 'Male' },
+    { value: 'female', text: 'Female' }
+  ];
+
   return (
     <div className="form-container">
       <form onSubmit={props.handleSubmit(props.onSubmitForm)}>
@@ -59,7 +65,7 @@ const ConnectedRegisterFrom = props => {
           label="About Me"
         />
         <hr className="separator" />
-        <Field name="genre" type="text" component={InputText} label="Genre" />
+        <GroupRadioButtons title="genre" name="genre" values={genres} />
         <Field
           name="address"
           type="text"
@@ -80,7 +86,8 @@ const validate = values => {
     password,
     confirmPassword,
     birthday,
-    telephone
+    telephone,
+    genre
   } = values;
 
   const errors = {};
@@ -117,12 +124,18 @@ const validate = values => {
 
   if (StringValidator.isStringNull(birthday)) {
     errors.birthday = 'Required Field';
+  } else if (StringValidator.getAge(birthday) < 18) {
+    errors.birthday = 'you must be 18 or older to register';
   }
 
   if (StringValidator.isStringNull(telephone)) {
     errors.telephone = 'Required Field';
   } else if (StringValidator.isStringOnlyNumber(telephone)) {
     errors.telephone = 'field must be only numbers';
+  }
+
+  if (StringValidator.isStringNull(genre)) {
+    errors.genre = 'Required Field';
   }
 
   return errors;
