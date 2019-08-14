@@ -1,9 +1,9 @@
 .layout-container {
-  min-height: 100vh;
+  min-height: 100%;
   display: flex;
   flex-direction: column;
 
   .content {
-    height: 100vh;
+    flex: 1;
   }
 }

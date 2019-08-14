@@ -9,7 +9,22 @@ class ConnectedHome extends React.Component {
     return (
       <div className="home-container">
         <Layout>
-          <span>aqui va algo chivo</span>
+          <div>PELICULAS</div>
+          <div>
+            {this.props.movies.map(movie => {
+              return (
+                <div className="movie" key={movie.id}>
+                  <span>
+                    <img
+                      src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
+                      alt="movie"
+                    />
+                  </span>
+                  <span>{movie.title}</span>
+                </div>
+              );
+            })}
+          </div>
         </Layout>
       </div>
     );
