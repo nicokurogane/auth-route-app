@@ -1,5 +1,6 @@
 import React from 'react';
 import { reduxForm, Field } from 'redux-form';
+import InputText from '../custom-inputs/InputText';
 
 import userSvg from '../../assets/user.svg';
 import lockerSvg from '../../assets/locked.svg';
@@ -14,14 +15,14 @@ const ConnectedLoginForm = props => {
       <Field
         name="email"
         type="text"
-        component={renderField}
+        component={InputText}
         label="Username"
         image={userSvg}
       />
       <Field
         name="password"
         type="password"
-        component={renderField}
+        component={InputText}
         label="Password"
         image={lockerSvg}
       />
@@ -32,26 +33,10 @@ const ConnectedLoginForm = props => {
   );
 };
 
-const renderField = ({
-  input,
-  label,
-  type,
-  image,
-  meta: { touched, error }
-}) => (
-  <div className="control-field-container">
-    <div className="field-container">
-      <img src={image} alt="input field" className="image" />
-      <input {...input} placeholder={label} type={type} className="input" />
-    </div>
-    {touched && error && <span className="error">{error}</span>}
-  </div>
-);
-
 const validate = values => {
   const errors = {};
-  if (!values.username) {
-    errors.username = 'Required Field';
+  if (!values.email) {
+    errors.email = 'Required Field';
   }
 
   if (!values.password) {
