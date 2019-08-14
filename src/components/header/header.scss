@@ -1,0 +1,12 @@
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 5vh;
+  background-color: #ed3b37;
+  color: #ffffff;
+
+  .links-container {
+    width: 10%;
+    align-self: flex-end;
+  }
+}

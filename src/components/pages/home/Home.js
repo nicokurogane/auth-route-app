@@ -1,19 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchMovies } from '../../../actions/moviesdb/actions';
+import Layout from '../../layout/Layout';
 
 class ConnectedHome extends React.Component {
   render() {
     console.log(this.props.movies);
     return (
       <div className="home-container">
-        <span>HOME PAGE</span>
-
-        <div>
-          {this.props.movies.length > 0
-            ? 'si hay productos'
-            : 'no hay productos'}
-        </div>
+        <Layout>
+          <span>aqui va algo chivo</span>
+        </Layout>
       </div>
     );
   }
