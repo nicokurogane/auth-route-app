@@ -7,3 +7,8 @@ export const sendLoginCredentials = async loginCredentials => {
   );
   return serverResponse;
 };
+
+export const postRegisterUser = async userData => {
+  let serverResponse = await reqresAxiosInstance.post('/register', userData);
+  return serverResponse;
+};

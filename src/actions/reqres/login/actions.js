@@ -3,7 +3,7 @@ import {
   LOGIN_FAILURE,
   LOGIN_SUCCESFUL
 } from './constants';
-import { sendLoginCredentials } from '../../data/network/reqres-request-handler';
+import { sendLoginCredentials } from '../../../data/network/reqres-request-handler';
 
 export const checkLoginCredentials = loginCredentials => async dispatch => {
   dispatch({ type: CHECK_LOGIN_CREDENTIALS });

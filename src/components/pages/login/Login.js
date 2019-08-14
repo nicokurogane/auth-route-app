@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { checkLoginCredentials } from '../../../actions/reqres/actions';
+import { checkLoginCredentials } from '../../../actions/reqres/login/actions';
 import { Link } from 'react-router-dom';
 import LoginFrom from '../../login-form/LoginForm';
 

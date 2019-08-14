@@ -18,11 +18,6 @@ class StringValidator {
   static isStringLengthLesserThanAValue(stringToCheck, value) {
     return stringToCheck.length < value;
   }
-
-  static isStringAValidURL(stringToCheck) {
-    const pattern = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
-    return pattern.test(stringToCheck);
-  }
 }
 
 export default StringValidator;

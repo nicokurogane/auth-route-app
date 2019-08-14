@@ -2,7 +2,7 @@ import { FETCH_ALL_MOVIES } from '../actions/moviesdb/constants';
 
 const initialState = { list: [] };
 
-const moviesReducer = (state = initialState, action) => {
+const moviesReducers = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_ALL_MOVIES:
       return { ...state, list: action.payload };
@@ -10,4 +10,4 @@ const moviesReducer = (state = initialState, action) => {
       return state;
   }
 };
-export default moviesReducer;
+export default moviesReducers;

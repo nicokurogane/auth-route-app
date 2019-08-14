@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
 import { reducer as formReducer } from 'redux-form';
-import moviesReducer from './MoviesReducer';
+import moviesReducers from './MoviesReducers';
 import loginReducers from './LoginReducers';
 
 const infinityAppReducers = combineReducers({
-  movies: moviesReducer,
+  movies: moviesReducers,
   login: loginReducers,
   form: formReducer
 });
