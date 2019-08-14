@@ -35,32 +35,3 @@
   color: #cb1915;
   font-size: 0.8rem;
 }
-
-.submit-button {
-  color: #ffffff;
-  background: rgb(227, 41, 41);
-  background: linear-gradient(
-    0deg,
-    rgba(227, 41, 41, 1) 0%,
-    rgba(236, 53, 29, 1) 0%,
-    rgba(226, 37, 35, 1) 100%
-  );
-  width: 100%;
-  margin: 2vh 0 2vh 0;
-  padding: 2vh;
-  border: none;
-  border-radius: 25px;
-  transition: all 0.25s ease-in-out;
-  font-weight: bold;
-  align-self: stretch;
-
-  &:hover {
-    background: rgb(227, 41, 41);
-    background: linear-gradient(
-      0deg,
-      rgba(227, 41, 41, 1) 0%,
-      rgba(226, 37, 35, 1) 0%,
-      rgba(242, 62, 8, 1) 100%
-    );
-  }
-}

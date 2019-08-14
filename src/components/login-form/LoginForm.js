@@ -1,6 +1,7 @@
 import React from 'react';
 import { reduxForm, Field } from 'redux-form';
 import InputText from '../custom-inputs/InputText';
+import SubmitButton from '../custom-inputs/submit-button/SubmitButton';
 
 import userSvg from '../../assets/user.svg';
 import lockerSvg from '../../assets/locked.svg';
@@ -26,9 +27,7 @@ const ConnectedLoginForm = props => {
         label="Password"
         image={lockerSvg}
       />
-      <button type="submit" className="submit-button">
-        Sign In
-      </button>
+      <SubmitButton value="Sign In" />
     </form>
   );
 };
