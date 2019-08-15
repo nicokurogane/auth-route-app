@@ -10,7 +10,7 @@ class ConnectedRegister extends React.Component {
   handleSubmit = values => {
     console.log(values);
     const { email, password } = values;
-    this.props.registerUser({ email, password });
+    this.props.registerUser(this.props.history, { email, password });
   };
 
   render() {
@@ -23,9 +23,7 @@ class ConnectedRegister extends React.Component {
         <RegisterForm onSubmitForm={this.handleSubmit} />
         {this.props.isRegisteringUser ? (
           <img src={spinnerGif} alt="loading" />
-        ) : (
-          ''
-        )}
+        ) : null}
       </div>
     );
   }

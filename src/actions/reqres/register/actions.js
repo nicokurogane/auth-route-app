@@ -6,11 +6,12 @@ import {
 
 import { postRegisterUser } from '../../../data/network/reqres-request-handler';
 
-export const registerUser = userData => async dispatch => {
+export const registerUser = (history, userData) => async dispatch => {
   dispatch({ type: REGISTERING_USER });
   await postRegisterUser(userData)
     .then(response => {
       dispatch({ type: REGISTER_SUCCESSFUL });
+      history.push('/login');
     })
     .catch(err => {
       console.log(err);

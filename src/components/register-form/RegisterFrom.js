@@ -54,7 +54,7 @@ const ConnectedRegisterFrom = props => {
         />
         <Field
           name="url"
-          type="url"
+          type="text"
           component={InputText}
           label="Personal Blog Url"
         />
@@ -93,7 +93,9 @@ const validate = values => {
     confirmPassword,
     birthday,
     telephone,
-    genre
+    genre,
+    address,
+    url
   } = values;
 
   const errors = {};
@@ -138,6 +140,16 @@ const validate = values => {
     errors.telephone = 'Required Field';
   } else if (StringValidator.isStringOnlyNumber(telephone)) {
     errors.telephone = 'field must be only numbers';
+  }
+
+  if (StringValidator.isStringNull(address)) {
+    errors.address = 'Required Field';
+  }
+
+  if (!StringValidator.isStringNull(url)) {
+    if (StringValidator.isStringAValidURL(url)) {
+      errors.url = 'Url must be valid: www.example.com/ex';
+    }
   }
 
   if (StringValidator.isStringNull(genre)) {
