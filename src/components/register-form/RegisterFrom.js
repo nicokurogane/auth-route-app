@@ -65,7 +65,13 @@ const ConnectedRegisterFrom = props => {
           label="About Me"
         />
         <hr className="separator" />
-        <GroupRadioButtons title="genre" name="genre" values={genres} />
+        <Field
+          component={GroupRadioButtons}
+          title="genre"
+          name="genre"
+          values={genres}
+        />
+
         <Field
           name="address"
           type="text"
