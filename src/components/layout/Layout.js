@@ -3,10 +3,10 @@ import Header from '../header/Header';
 import Footer from '../footer/Footer';
 import './layout.scss';
 
-const Layout = ({ children }) => {
+const Layout = ({ history, children }) => {
   return (
     <div className="layout-container">
-      <Header />
+      <Header history={history} />
       <div className="content">{children}</div>
       <Footer />
     </div>

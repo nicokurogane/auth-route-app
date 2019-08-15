@@ -5,10 +5,9 @@ import Layout from '../../layout/Layout';
 
 class ConnectedHome extends React.Component {
   render() {
-    console.log(this.props.movies);
     return (
       <div className="home-container">
-        <Layout>
+        <Layout history={this.props.history}>
           <div>PELICULAS</div>
           <div>
             {this.props.movies.map(movie => {

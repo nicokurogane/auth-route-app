@@ -1,7 +1,8 @@
 import {
   CHECK_LOGIN_CREDENTIALS,
   LOGIN_FAILURE,
-  LOGIN_SUCCESFUL
+  LOGIN_SUCCESFUL,
+  LOGOUT_USER
 } from './constants';
 import { sendLoginCredentials } from '../../../data/network/reqres-request-handler';
 import LocalStorage from '../../../data/local-storage-handler/LocalStorage';
@@ -21,4 +22,10 @@ export const checkLoginCredentials = (
       console.log(err);
       dispatch({ type: LOGIN_FAILURE });
     });
+};
+
+export const logoutUser = history => async dispatch => {
+  LocalStorage.cleanAuthToken();
+  dispatch({ type: LOGOUT_USER });
+  history.push('/login');
 };
