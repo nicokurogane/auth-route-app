@@ -4,7 +4,7 @@ import {
   REGISTER_FAILED
 } from '../actions/reqres/register/constants';
 
-const initialState = { user: null, isRegisteringUser: false };
+const initialState = { isRegisteringUser: false };
 const registerReducers = (state = initialState, action) => {
   switch (action.type) {
     case REGISTERING_USER:
@@ -12,7 +12,7 @@ const registerReducers = (state = initialState, action) => {
     case REGISTER_FAILED:
       return { ...state, isRegisteringUser: false };
     case REGISTER_SUCCESSFUL:
-      return { ...state, user: action.payload, isRegisteringUser: false };
+      return { ...state, isRegisteringUser: false };
     default:
       return state;
   }

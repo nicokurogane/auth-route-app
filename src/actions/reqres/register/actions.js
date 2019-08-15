@@ -10,8 +10,7 @@ export const registerUser = userData => async dispatch => {
   dispatch({ type: REGISTERING_USER });
   await postRegisterUser(userData)
     .then(response => {
-      let newUser = { ...userData, ...response.data };
-      dispatch({ type: REGISTER_SUCCESSFUL, payload: newUser });
+      dispatch({ type: REGISTER_SUCCESSFUL });
     })
     .catch(err => {
       console.log(err);

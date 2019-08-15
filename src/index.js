@@ -12,6 +12,7 @@ import App from './App';
 import Login from './components/pages/login/Login';
 import Home from './components/pages/home/Home';
 import Register from './components/pages/register/Register';
+import PrivateRoute from './components/routes/PrivateRoute';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
@@ -26,7 +27,7 @@ ReactDOM.render(
         <Switch>
           <Route path="/login" exact component={Login} />
           <Route path="/register-user" exact component={Register} />
-          <Route path="/" exact component={Home} />
+          <PrivateRoute path="/" exact component={Home} />
         </Switch>
       </App>
     </Router>

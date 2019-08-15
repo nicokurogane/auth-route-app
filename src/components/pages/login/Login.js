@@ -11,7 +11,7 @@ import dummyLoading from '../../../assets/locked.svg';
 class ConnectedLogin extends React.Component {
   handleSubmit = values => {
     console.log(values);
-    this.props.checkLoginCredentials(values);
+    this.props.checkLoginCredentials(this.props.history, values);
   };
 
   render() {
@@ -30,9 +30,7 @@ class ConnectedLogin extends React.Component {
             <LoginFrom onSubmitForm={this.handleSubmit} />
             <div>
               <span>Don't you have an account?</span>
-              <Link to="/" className="">
-                Sign Up Now
-              </Link>
+              <Link to="/register-user">Sign Up Now</Link>
             </div>
 
             <div>
