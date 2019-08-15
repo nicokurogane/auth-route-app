@@ -6,7 +6,7 @@ import LoginFrom from '../../login-form/LoginForm';
 
 import './login.scss';
 import cityImg from '../../../assets/future-city.jpg';
-import dummyLoading from '../../../assets/locked.svg';
+import loadingGif from '../../../assets/spinner.gif';
 
 class ConnectedLogin extends React.Component {
   handleSubmit = values => {
@@ -35,9 +35,9 @@ class ConnectedLogin extends React.Component {
 
             <div>
               <img
-                src={dummyLoading}
+                src={loadingGif}
                 style={{
-                  height: '1rem',
+                  height: '2rem',
                   margin: '4vh',
                   display: this.props.isCheckingUser ? 'block' : 'none'
                 }}
