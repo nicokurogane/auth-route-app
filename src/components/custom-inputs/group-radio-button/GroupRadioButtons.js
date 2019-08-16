@@ -7,7 +7,6 @@ class GroupRadioButtons extends React.Component {
     const {
       input,
       title,
-      name,
       values,
       meta: { touched, error }
     } = this.props;
@@ -21,7 +20,7 @@ class GroupRadioButtons extends React.Component {
               <>
                 <span key={value}>
                   <label>{text}</label>
-                  <input type="radio" {...input} name={name} value={value} />
+                  <input type="radio" {...input} value={value} />
                 </span>
               </>
             );

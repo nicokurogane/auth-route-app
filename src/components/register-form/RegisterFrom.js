@@ -3,6 +3,7 @@ import { reduxForm, Field } from 'redux-form';
 import SubmitButton from '../custom-inputs/submit-button/SubmitButton';
 import InputText from '../custom-inputs/InputText';
 import GroupRadioButtons from '../custom-inputs/group-radio-button/GroupRadioButtons';
+import CustomSelectInput from '../CustomSelectInput';
 import StringValidator from '../../utilities/StringValidator';
 
 const ConnectedRegisterFrom = props => {
@@ -72,12 +73,8 @@ const ConnectedRegisterFrom = props => {
           values={genres}
         />
 
-        <Field
-          name="address"
-          type="text"
-          component={InputText}
-          label="Address"
-        />
+        <CustomSelectInput />
+
         <SubmitButton value="Register me!" />
       </form>
     </div>
@@ -94,7 +91,6 @@ const validate = values => {
     birthday,
     telephone,
     genre,
-    address,
     url
   } = values;
 
@@ -140,10 +136,6 @@ const validate = values => {
     errors.telephone = 'Required Field';
   } else if (StringValidator.isStringOnlyNumber(telephone)) {
     errors.telephone = 'field must be only numbers';
-  }
-
-  if (StringValidator.isStringNull(address)) {
-    errors.address = 'Required Field';
   }
 
   if (!StringValidator.isStringNull(url)) {
