@@ -9,7 +9,7 @@ class ConnectedHome extends React.Component {
   render() {
     return (
       <div className="home-container">
-        <Layout history={this.props.history}>
+        <Layout history={this.props.history} user={this.props.loggedUser}>
           <div className="lastest-movies">Lastest movies</div>
           <div className="movies-list-container">
             {this.props.movies.map(movie => {
@@ -39,7 +39,7 @@ class ConnectedHome extends React.Component {
 }
 
 const mapStateToProps = state => {
-  return { movies: state.movies.list };
+  return { movies: state.movies.list, loggedUser: state.login.user };
 };
 
 const Home = connect(

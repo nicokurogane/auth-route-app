@@ -1,0 +1,30 @@
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.avatar-button {
+  border: none;
+  background-color: transparent;
+}
+
+.card {
+  background-color: #ffffff;
+  border: 1px #ed3b37 solid;
+  color: #ed3b37;
+  position: absolute;
+  right: 4vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 4vh;
+  width: 16vh;
+  height: 16vh;
+  transition: opacity 0.2s ease-in-out;
+
+  .email-user {
+    font-size: 0.8rem;
+  }
+}

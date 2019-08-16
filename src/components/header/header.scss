@@ -11,15 +11,18 @@
   }
 
   .links-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 10%;
     align-self: flex-end;
     .button {
       border: 1px #ffffff solid;
       border-radius: 15px;
-
+      margin-right: 3vh;
       background-color: #ed3b37;
       color: #ffffff;
-      padding: 2vh;
+      padding: 1.5vh;
       transition: all 0.2s ease-in-out;
 
       &:hover {

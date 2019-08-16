@@ -1,4 +1,5 @@
 import React from 'react';
+import Avatar from '../avatar/Avatar';
 import { connect } from 'react-redux';
 import { logoutUser } from '../../actions/reqres/login/actions';
 
@@ -17,6 +18,7 @@ class ConnectedHeader extends React.Component {
           <button className="button" onClick={this.onLogoutClick}>
             Log out
           </button>
+          <Avatar user={this.props.user} />
         </div>
       </header>
     );
