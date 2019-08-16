@@ -12,9 +12,11 @@ class ConnectedHeader extends React.Component {
   render() {
     return (
       <header className="app-header">
-        <span>app header</span>
+        <span className="title">INIFINITY MOVIES</span>
         <div className="links-container">
-          <button onClick={this.onLogoutClick}>Log out</button>
+          <button className="button" onClick={this.onLogoutClick}>
+            Log out
+          </button>
         </div>
       </header>
     );

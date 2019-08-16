@@ -4,9 +4,28 @@
   padding: 5vh;
   background-color: #ed3b37;
   color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+
+  .title {
+    font-size: 1.8rem;
+  }
 
   .links-container {
     width: 10%;
     align-self: flex-end;
+    .button {
+      border: 1px #ffffff solid;
+      border-radius: 15px;
+
+      background-color: #ed3b37;
+      color: #ffffff;
+      padding: 2vh;
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        background-color: #ffffff;
+        color: #ed3b37;
+      }
+    }
   }
 }

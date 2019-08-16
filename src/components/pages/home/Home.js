@@ -10,7 +10,6 @@ class ConnectedHome extends React.Component {
     return (
       <div className="home-container">
         <Layout history={this.props.history}>
-          <div className="WELCOME-SIGN">WELCOME TO INFINITY MOVIES!</div>
           <div className="lastest-movies">Lastest movies</div>
           <div className="movies-list-container">
             {this.props.movies.map(movie => {
