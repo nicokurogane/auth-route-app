@@ -3,23 +3,28 @@ import { connect } from 'react-redux';
 import { fetchMovies } from '../../../actions/moviesdb/actions';
 import Layout from '../../layout/Layout';
 
+import './home.scss';
+
 class ConnectedHome extends React.Component {
   render() {
     return (
       <div className="home-container">
         <Layout history={this.props.history}>
-          <div>PELICULAS</div>
-          <div>
+          <div className="WELCOME-SIGN">WELCOME TO INFINITY MOVIES!</div>
+          <div className="lastest-movies">Lastest movies</div>
+          <div className="movies-list-container">
             {this.props.movies.map(movie => {
               return (
                 <div className="movie" key={movie.id}>
-                  <span>
+                  <div>
                     <img
-                      src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
+                      src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
                       alt="movie"
+                      className="poster"
                     />
-                  </span>
-                  <span>{movie.title}</span>
+                  </div>
+                  <div className="info-overlay"></div>
+                  <div className="text-overlay">{movie.title}</div>
                 </div>
               );
             })}
