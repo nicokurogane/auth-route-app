@@ -22,7 +22,7 @@ class ConnectedLogin extends React.Component {
 
         <div className="form-login-container">
           <div className="form-container panel">
-            <h2 className="welcome">welcome to infinity</h2>
+            <h2 className="welcome">Welcome to Infinity</h2>
             <span>
               Log in to get in the moment updates on the things that interest
               you
@@ -53,7 +53,12 @@ class ConnectedLogin extends React.Component {
             />
             <div className="about-panel right-border stacking-container" />
             <div className="about-panel-content stacking-container">
-              infinity
+              <p className="description">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat.{' '}
+              </p>
             </div>
           </div>
         </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { reduxForm, Field } from 'redux-form';
+import { Link } from 'react-router-dom';
 import SubmitButton from '../custom-inputs/submit-button/SubmitButton';
 import InputText from '../custom-inputs/InputText';
 import GroupRadioButtons from '../custom-inputs/group-radio-button/GroupRadioButtons';
@@ -74,9 +75,14 @@ const ConnectedRegisterFrom = props => {
         />
 
         <CustomSelectInput />
+        <hr className="separator" />
 
         <SubmitButton value="Register me!" />
       </form>
+      <hr className="separator" />
+      <div className="">
+        ...Or you can <Link to="/login">Go back To Sig In</Link>
+      </div>
     </div>
   );
 };
